@@ -34,21 +34,18 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
-        [Ignore("Found better solution for this test.")]
-        public void Max_SecondArgumentIsGreater_ReturnSecondArgument()
+        public void GetOddNumbers_LimitIsGreaterThanZero_ReturnOddNumbers()
         {
-            var result = _math.Max(1, 2);
+            var result = _math.GetOddNumbers(5);
 
-            Assert.That(result, Is.EqualTo(2));
-        }
+            //Assert.That(result, Is.Not.Empty);
 
-        [Test]
-        [Ignore("Found better solution for this test.")]
-        public void Max_ArgumentsAreEqual_ReturnSameArgument()
-        {
-            var result = _math.Max(1, 1);
+            //Assert.That(result.Count(), Is.EqualTo(3));
 
-            Assert.That(result, Is.EqualTo(1));
+            //Assert.That(result, Is.Ordered);
+            //Assert.That(result, Is.Unique);
+
+            Assert.That(result, Is.EquivalentTo(new[] { 1, 3, 5 }));
         }
     }
 }
